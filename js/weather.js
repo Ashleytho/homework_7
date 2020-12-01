@@ -1,21 +1,31 @@
 function gettingJSON(){
     //Display the forecast
     // Your code here.
+    document.querySelector('#forecast').style.display = "block";
 
     //Set default location if one isn't provided
-    let location;
+    let location = "Ann Arbor";
 
     // Your code here.
+    if (document.querySelector("#location").value){
+        location = document.querySelector("#location").value
+    }
     console.log("Location is : " + location);
 
     //set default temperature format if one isn't provided
-    let fomat;
+    let format = "imperial";
 
     // Your code here.
+    if (document.getElementById("fahrenheit").checked){
+        format = "imperial";
+    }
+    if (document.getElementById("celcius").checked){
+        format = "metric";
+    }
     console.log("Format is " + format);
 
     //set the query  
-    let query;
+    let query = "api.openweathermap.org/data/2.5/weather?q=" + location + "&units=" + format + "&appid=" + "771063bb4fde1ba86309dc7699d22dac";
     // Your code here.  
     
     console.log("Query is :" + query);
@@ -34,6 +44,12 @@ function gettingJSON(){
         //elements in HTML.  
         //I would print the JSON to the console
         // Your code here.
+
+        console.log(json);
+
+
+
+
 
     });
 }
