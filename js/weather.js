@@ -25,7 +25,7 @@ function gettingJSON(){
     console.log("Format is " + format);
 
     //set the query  
-    let query = "api.openweathermap.org/data/2.5/weather?q=" + location + "&units=" + format + "&appid=" + "771063bb4fde1ba86309dc7699d22dac";
+    let query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=" + format + "&appid=" + "771063bb4fde1ba86309dc7699d22dac";
     // Your code here.  
     
     console.log("Query is :" + query);
@@ -36,6 +36,7 @@ function gettingJSON(){
     let loc;
     let temp;
     let tempImg;
+    let des;
     // Your code here.
 
 
@@ -48,7 +49,17 @@ function gettingJSON(){
         console.log(json);
 
 
+        loc= json['name'];
+        temp= json['main']['temp'];
+        tempImg= json["weather"][0]["icon"]
+        des = json["weather"][0]["description"]
 
+
+
+        document.querySelector("#loc").innerHTML = loc;
+        document.querySelector("#temp").innerHTML = temp;
+        document.querySelector("#tempImg").src =  'http://openweathermap.org/img/wn/' + tempImg + '.png';
+        document.querySelector("#tempImg").alt =  des;
 
 
     });
