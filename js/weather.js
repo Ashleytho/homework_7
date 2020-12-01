@@ -57,7 +57,7 @@ function gettingJSON(){
 
 
         document.querySelector("#loc").innerHTML = loc;
-        document.querySelector("#temp").innerHTML = temp;
+        document.querySelector("#temp").innerHTML = temp + " with " + des;
         document.querySelector("#tempImg").src =  'http://openweathermap.org/img/wn/' + tempImg + '.png';
         document.querySelector("#tempImg").alt =  des;
 
